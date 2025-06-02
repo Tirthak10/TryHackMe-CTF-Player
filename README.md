@@ -8,3 +8,9 @@ This is purely a light-hearted, personal project to show off my TryHackMe progre
 
 ## 🧾 Output
 
+============================
+TryHackMe CTF Player
+Alias : Sovereign10 (Tirthak)
+Global Rank : Under 350,000
+Platform : TryHackMe - Learn Cybersecurity
+Keep Hacking. Stay Curious. 🕵️‍♂️
