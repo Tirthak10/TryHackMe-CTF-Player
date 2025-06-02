@@ -37,8 +37,20 @@ Keep Hacking. Stay Curious. 🕵️‍♂️
 ## ⚙️ 4. How to Run
 
 ### 💻 Using Terminal (with g++)
-<pre> ```cpp #include <iostream> using namespace std; int main() { cout << "============================\n"; cout << " TryHackMe CTF Player\n"; cout << "============================\n"; cout << "Alias : Sovereign10 (Tirthak)\n"; cout << "Global Rank : Under 350,000\n"; cout << "Platform : TryHackMe - Learn Cybersecurity\n"; cout << "============================\n"; cout << "Keep Hacking. Stay Curious. 🕵️‍♂️\n"; return 0; } ``` </pre>
 
 ```bash
-g++ main.cpp -o tryhackme_ctf
-./tryhackme_ctf
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "============================\n";
+    cout << "   TryHackMe CTF Player\n";
+    cout << "============================\n";
+    cout << "Alias       : Sovereign10 (Tirthak)\n";
+    cout << "Global Rank : Under 350,000\n";
+    cout << "Platform    : TryHackMe - Learn Cybersecurity\n";
+    cout << "============================\n";
+    cout << "Keep Hacking. Stay Curious. 🕵️‍♂️\n";
+    return 0;
+}
+
