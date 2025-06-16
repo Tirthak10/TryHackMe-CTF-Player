@@ -56,185 +56,191 @@ int main() {
 
 ```
 
-# 🖥️ Windows Networking Commands — Complete Guide for Beginners
 
-Welcome to your personal networking command reference! This document covers the most essential Windows command-line networking tools — perfect for beginners and future cybersecurity professionals.
+# 🖥️ Windows Command Line Networking & System Essentials
 
-Each section includes:
-- ✅ **Description**
-- 🧠 **Example**
-- 🎯 **Use Case**
-- ⚡ **Tips/Shortcuts**
+> 🚀 This guide is a complete reference to essential **Windows Command Line (CMD)** commands for system info and network diagnostics. It includes **descriptions, examples, use cases, and tips** — perfect for cybersecurity learners, system admins, and power users.
 
 ---
 
-## 📌 Table of Contents
+## 📋 Table of Contents
 
-- [ipconfig](#-ipconfig)
-- [ipconfig /all](#-ipconfig-all)
-- [ping](#-ping)
-- [tracert](#-tracert)
-- [nslookup](#-nslookup)
-- [netstat](#-netstat)
-- [netstat -abon](#-netstat--abon)
-
----
-
-## 🔌 `ipconfig`
-
-✅ **Description**:  
-Displays basic IP address, subnet mask, and default gateway.
-
-🧠 **Example**:
-```bash
-ipconfig
-```
-
-🎯 **Use Case**:  
-Check your current IP settings and verify network setup.
-
-⚡ **Tips/Shortcuts**:  
-Use `ipconfig /release` and `ipconfig /renew` to refresh your IP.
+1. [System Commands](#-system-commands)
+   - `ver`
+   - `systeminfo`
+   - `set`
+   - `cls`
+2. [Help & Navigation](#-help--navigation-commands)
+   - `help`
+3. [File Management](#-file--folder-management)
+   - TBD
+4. [Network Configuration & Troubleshooting](#-network-configuration--troubleshooting)
+   - `ipconfig`
+   - `ping`
+   - `tracert`
+   - `nslookup`
+   - `netstat`
 
 ---
 
-## 🔎 `ipconfig /all`
+## 🖥️ System Commands
 
-✅ **Description**:  
-Displays detailed configuration information for all network adapters.
+### 🔹 `ver`
 
-🧠 **Example**:
-```bash
-ipconfig /all
-```
-
-🎯 **Use Case**:  
-Check if DHCP is enabled, find MAC address, or see DNS server info.
-
-⚡ **Tips/Shortcuts**:  
-Use this to troubleshoot DNS and DHCP issues.
+- ✅ **Description:** Displays the Windows operating system version.
+- 🧠 **Example:**  
+  ```cmd
+  ver
+  ```
+- 🎯 **Use Case:** Quick check of the OS version when writing scripts or logging system information.
+- ⚡ **Tip:** Useful in forensic logs and documentation to confirm the system's build.
 
 ---
 
-## 🛰️ `ping`
+### 🔹 `systeminfo`
 
-✅ **Description**:  
-Sends ICMP packets to check if a host is reachable.
-
-🧠 **Example**:
-```bash
-ping example.com
-```
-
-🎯 **Use Case**:  
-Test connectivity to a website or another device.
-
-⚡ **Tips/Shortcuts**:  
-Add `-t` to ping continuously until stopped (Ctrl + C).
+- ✅ **Description:** Shows detailed information about your system including OS version, hardware config, RAM, and network interfaces.
+- 🧠 **Example:**  
+  ```cmd
+  systeminfo | more
+  ```
+- 🎯 **Use Case:** Collect system specs for audit, incident response, or documentation.
+- ⚡ **Tip:** Use `| more` to view large output one page at a time. Use `CTRL + C` to exit paging.
 
 ---
 
-## 🛣️ `tracert`
+### 🔹 `set`
 
-✅ **Description**:  
-Traces the route that packets take to reach a host.
-
-🧠 **Example**:
-```bash
-tracert example.com
-```
-
-🎯 **Use Case**:  
-Identify where connection slowdowns or packet losses happen.
-
-⚡ **Tips/Shortcuts**:  
-Use it when ping fails to understand *where* the failure occurs.
+- ✅ **Description:** Displays environment variables, including the PATH.
+- 🧠 **Example:**  
+  ```cmd
+  set
+  ```
+- 🎯 **Use Case:** Check where CMD looks for executables (`Path=`). Useful in debugging commands not found.
+- ⚡ **Tip:** Combine with `findstr` to filter:
+  ```cmd
+  set path
+  ```
 
 ---
 
-## 🌍 `nslookup`
+### 🔹 `cls`
 
-✅ **Description**:  
-Looks up DNS records and resolves domain names to IPs.
-
-🧠 **Example**:
-```bash
-nslookup example.com
-nslookup example.com 1.1.1.1
-```
-
-🎯 **Use Case**:  
-Verify if a domain resolves correctly and test different DNS servers.
-
-⚡ **Tips/Shortcuts**:  
-Use `nslookup` to check DNS poisoning or misconfiguration.
+- ✅ **Description:** Clears the screen of previous commands.
+- 🧠 **Example:**  
+  ```cmd
+  cls
+  ```
+- 🎯 **Use Case:** Start fresh when things get too cluttered.
+- ⚡ **Tip:** No confirmation — instantly wipes terminal view.
 
 ---
 
-## 📡 `netstat`
+## 📘 Help & Navigation Commands
 
-✅ **Description**:  
-Displays current TCP/IP network connections and ports.
+### 🔹 `help`
 
-🧠 **Example**:
-```bash
-netstat
-```
-
-🎯 **Use Case**:  
-Check what remote servers you're connected to.
-
-⚡ **Tips/Shortcuts**:  
-Use `netstat -h` to see all options.
+- ✅ **Description:** Lists available commands and provides basic syntax help.
+- 🧠 **Example:**  
+  ```cmd
+  help dir
+  ```
+- 🎯 **Use Case:** Look up how to use a command without Googling.
+- ⚡ **Tip:** Works with most native CMD commands.
 
 ---
 
-## 🧠 `netstat -abon`
+## 📁 File & Folder Management
 
-✅ **Description**:  
-Shows all connections, listening ports, program names, and PIDs.
-
-🧠 **Example**:
-```bash
-netstat -abon
-```
-
-🎯 **Use Case**:  
-Investigate which program opened which port. Great for troubleshooting malware or suspicious connections.
-
-⚡ **Tips/Shortcuts**:
-- `-a`: All ports (active and listening)
-- `-b`: Shows executable responsible
-- `-o`: Shows Process ID (PID)
-- `-n`: Shows addresses in numeric form
+_Coming soon…_
 
 ---
 
-## 🧠 Bonus Learning Tactics Used in This Guide
+## 🌐 Network Configuration & Troubleshooting
 
-- ✅ Real-world analogies to make terms relatable
-- ✅ Clean formatting for GitHub & PDF reading
-- ✅ Short and practical command blocks for copy-paste ease
-- ✅ No fluff — just what matters
+### 🔹 `ipconfig`
 
----
-
-🧠 **Review & Practice Plan**
-
-Open Command Prompt and try these:
-
-```
-ipconfig
-ipconfig /all
-ping google.com
-tracert google.com
-nslookup google.com
-netstat
-netstat -abon
-```
-
-💪 Keep practicing — each command makes you more confident and job-ready.
+- ✅ **Description:** Shows network adapter configuration (IP address, Subnet, Gateway).
+- 🧠 **Example:**  
+  ```cmd
+  ipconfig
+  ```
+- 🎯 **Use Case:** Identify your machine’s IP address or troubleshoot connectivity issues.
+- ⚡ **Tip:** Add `/all` for more info (DNS, DHCP):
+  ```cmd
+  ipconfig /all
+  ```
 
 ---
 
-✍️ *Generated and compiled by ChatGPT for learning productivity and future reference.*
+### 🔹 `ping`
+
+- ✅ **Description:** Sends ICMP packets to check if a host is reachable.
+- 🧠 **Example:**  
+  ```cmd
+  ping example.com
+  ```
+- 🎯 **Use Case:** Diagnose whether a website/server is online and reachable.
+- ⚡ **Tip:** Great for latency checks. Shows average round-trip time.
+
+---
+
+### 🔹 `tracert`
+
+- ✅ **Description:** Traces the path packets take to a host.
+- 🧠 **Example:**  
+  ```cmd
+  tracert example.com
+  ```
+- 🎯 **Use Case:** Identify where the network path is slow or broken (which hop is failing).
+- ⚡ **Tip:** Add `-d` to skip DNS lookup for faster results.
+
+---
+
+### 🔹 `nslookup`
+
+- ✅ **Description:** Resolves domain names to IP addresses using DNS.
+- 🧠 **Example:**  
+  ```cmd
+  nslookup example.com
+  nslookup example.com 1.1.1.1
+  ```
+- 🎯 **Use Case:** Test DNS resolution and troubleshoot domain issues.
+- ⚡ **Tip:** Try custom DNS servers (e.g., Google `8.8.8.8`, Cloudflare `1.1.1.1`).
+
+---
+
+### 🔹 `netstat`
+
+- ✅ **Description:** Shows active connections, listening ports, and associated processes.
+- 🧠 **Example:**  
+  ```cmd
+  netstat -abon
+  ```
+- 🎯 **Use Case:** Discover what services are using your network. Helps spot malware or unauthorized access.
+- ⚡ **Tips:**
+  - `-a`: All connections and listening ports.
+  - `-b`: Shows executable involved.
+  - `-o`: Shows process ID (PID).
+  - `-n`: Skip DNS lookup for speed.
+
+---
+
+## 🧠 Summary Cheatsheet
+
+| Command         | Purpose                       | Quick Example                |
+|----------------|-------------------------------|------------------------------|
+| `ver`          | Show OS version               | `ver`                        |
+| `systeminfo`   | System details                | `systeminfo | more`          |
+| `set`          | View env variables            | `set path`                   |
+| `ipconfig`     | View IP config                | `ipconfig /all`              |
+| `ping`         | Check connectivity            | `ping google.com`            |
+| `tracert`      | Trace route to a server       | `tracert example.com`        |
+| `nslookup`     | DNS resolution                | `nslookup example.com`       |
+| `netstat`      | Show active connections       | `netstat -abon`              |
+| `help`         | Command syntax help           | `help dir`                   |
+| `cls`          | Clear terminal                | `cls`                        |
+
+---
+
+> 🔐 **Pro Tip for Cybersecurity Learners:** Mastering the CLI is essential for working on remote systems, automating audits, and spotting vulnerabilities quickly.
