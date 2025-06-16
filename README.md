@@ -57,7 +57,7 @@ int main() {
 ```
 
 
-# 🖥️ Windows Command Line Networking & System Essentials
+# 🖥️ Windows Command Line Networking & System Essentials ROOM on TryHackMe
 
 > 🚀 This guide is a complete reference to essential **Windows Command Line (CMD)** commands for system info and network diagnostics. It includes **descriptions, examples, use cases, and tips** — perfect for cybersecurity learners, system admins, and power users.
 
